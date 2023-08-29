@@ -1,0 +1,11 @@
+source_schema: <<REPLACE ME>>
+target_schema: <<REPLACE ME>>
+
+target_tables:
+{% for table in tables %}
+  - target_table: {{ table }}
+    source_table: <<REPLACE ME>>
+    primary_key: <<REPLACE ME>>
+    target_scd_type: 2
+    source_scd_type: 0
+{% endfor %}
