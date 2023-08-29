@@ -2,6 +2,7 @@ import click
 
 from auto_vt.config_generator import generate_config
 from auto_vt.config_parser import load_parse_config
+from auto_vt.test_suite_generator import create_or_replace_test_suite
 
 @click.group()
 def cli():
@@ -20,9 +21,11 @@ def new_config(targets, output):
 @cli.command()
 @click.option("--config", default="config.yaml", help="Location of the config file from which to generate test cases")
 @click.option("--label", "-l", default=None, help="A label used to name the outputted test suite")
-def run(config, label):
+@click.option("--output", "-o", default=".", help="Location to create test suite directory")
+def run(config, label, output):
     """Use a completed config file to auto-generate TVT scripts"""
-    load_parse_config(config)
+    vt_config = load_parse_config(config)
+    create_or_replace_test_suite(label, output, vt_config)
 
 
 if __name__ == "__main__":
