@@ -1,14 +1,11 @@
 WITH source AS (
     SELECT 
-        {% if target.target_scd_type == 1 %}
         COUNT(DISTINCT {{ target.source_key }})
-        {% else %}
-        COUNT(1) as total
-        {% endif %}
     FROM {{ source_schema }}.{{ target.source }}
 ),
 target AS (
-    SELECT COUNT(1) as total
+    SELECT 
+        COUNT(DISTINCT {{ target.primary_key }}) as total
     FROM {{ target_schema }}.{{ target.name }}
 )
 
