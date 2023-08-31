@@ -4,7 +4,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 from avt.dto.config import Config
 
 env = Environment(
-    loader=PackageLoader("auto_vt", "templates"),
+    loader=PackageLoader("avt", "templates"),
     autoescape=select_autoescape()
 )
 

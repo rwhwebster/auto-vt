@@ -2,7 +2,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 import yaml
 
 env = Environment(
-    loader=PackageLoader("auto_vt", "templates"),
+    loader=PackageLoader("avt", "templates"),
     autoescape=select_autoescape()
 )
 
