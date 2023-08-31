@@ -10,14 +10,14 @@ target AS (
 )
 
 SELECT
-    'Source Record Count:' AS label,
+    'Source Distinct Record Count:' AS label,
     total
 FROM source
 
 UNION ALL
 
 SELECT 
-    'Target Record Count:' as label,
+    'Target Distinct Record Count:' as label,
     total
 FROM target
     
