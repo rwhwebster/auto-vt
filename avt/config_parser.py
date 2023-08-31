@@ -1,7 +1,7 @@
 from typing import Any
 import yaml
 
-from auto_vt.dto.config import Config
+from avt.dto.config import Config
 
 def __read_config(filepath: str) -> Any:
     """Read the configuration file into memory"""

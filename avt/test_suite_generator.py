@@ -1,7 +1,7 @@
 from enum import Enum
 from jinja2 import Environment, PackageLoader, select_autoescape
 
-from auto_vt.dto.config import Config
+from avt.dto.config import Config
 
 env = Environment(
     loader=PackageLoader("auto_vt", "templates"),

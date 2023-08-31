@@ -1,8 +1,8 @@
 import click
 
-from auto_vt.config_generator import generate_config
-from auto_vt.config_parser import load_parse_config
-from auto_vt.test_suite_generator import create_or_replace_test_suite
+from avt.config_generator import generate_config
+from avt.config_parser import load_parse_config
+from avt.test_suite_generator import create_or_replace_test_suite
 
 @click.group()
 def cli():

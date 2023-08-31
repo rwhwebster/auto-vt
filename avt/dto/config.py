@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from auto_vt.dto.target import Target
+from avt.dto.target import Target
 
 @dataclass
 class Config:
@@ -10,7 +10,7 @@ class Config:
 
     @classmethod
     def from_yaml(cls, config_yaml: dict):
-        
+
         target_tables = [
             Target.from_yaml(table) for table in config_yaml["target_tables"]
         ]

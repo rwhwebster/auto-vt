@@ -1,4 +1,4 @@
-# auto-vt
+# avt (Auto Validation Test)
 
 Python package for automated generation of sql validation test cases
 
