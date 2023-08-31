@@ -30,7 +30,7 @@ def __generate_test_cases_for_scenario(config: Config, scenario: str) -> list[Te
             target=table
         )
 
-        test_case = TestCase.new(table.name, scenario, rendered_sql)
+        test_case = TestCase(table.name, scenario, rendered_sql)
 
         test_cases.append(test_case)
 
@@ -60,8 +60,6 @@ def create_or_replace_test_suite(label: str, location: str, config: Config):
     ]
 
     suite_path = __create_and_set_suite_dir(label, location)
-
-    print(test_cases)
 
     for case in sum(test_cases, []):  # sum(x, []) here does quick and dirty flatten
         case.save_query(suite_path)

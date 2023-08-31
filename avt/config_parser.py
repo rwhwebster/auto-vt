@@ -12,5 +12,4 @@ def load_parse_config(filepath: str) -> Config:
     """"""
     config_dict = __read_config(filepath)
     config_obj = Config.from_yaml(config_dict)
-    print(config_obj)
     return config_obj

@@ -7,15 +7,6 @@ class TestCase:
     table_name: str
     test_scenario: str
     query: str
-
-    @classmethod
-    def new(cls, table, scenario, query):
-        """"""
-        return cls(
-            table_name = table,
-            test_scenario = scenario,
-            query = query
-        )
     
     def save_query(self, location: str):
         """Write the sql query to file at the specified location"""
