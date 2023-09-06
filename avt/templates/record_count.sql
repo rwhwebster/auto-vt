@@ -11,16 +11,10 @@ target AS (
     SELECT COUNT(1) as total
     FROM {{ target_schema }}.{{ target.name }}
 )
-
 SELECT
-    'Source Record Count:' AS label,
-    total
+    source.total AS SOURCE_COUNT,
+    target.total AS TARGET_COUNT,
+    (target.total - source.total) AS COUNT_DIFF
 FROM source
-
-UNION ALL
-
-SELECT 
-    'Target Record Count:' as label,
-    total
-FROM target
+FULL OUTER JOIN target
     

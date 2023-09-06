@@ -15,6 +15,7 @@ env = Environment(
 class TestCases(Enum):
     RECORD_COUNT = "record_count.sql"
     DISTINCT_VALUES = "distinct_values.sql"
+    DUPLICATE_CHECK = "duplicate_check.sql"
 
 
 def __generate_test_cases_for_scenario(config: Config, scenario: str) -> list[TestCase]:
@@ -56,7 +57,8 @@ def create_or_replace_test_suite(label: str, location: str, config: Config):
 
     test_cases: list[TestCase] = [
         __generate_test_cases_for_scenario(config, TestCases.RECORD_COUNT.value),
-        __generate_test_cases_for_scenario(config, TestCases.DISTINCT_VALUES.value)
+        __generate_test_cases_for_scenario(config, TestCases.DISTINCT_VALUES.value),
+        __generate_test_cases_for_scenario(config, TestCases.DUPLICATE_CHECK.value)
     ]
 
     suite_path = __create_and_set_suite_dir(label, location)
